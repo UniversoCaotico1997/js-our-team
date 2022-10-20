@@ -12,7 +12,7 @@
     // mi seleziono l'elemento della dom 
         // Attravero il querySelctor
 const rowElement = document.querySelector(`.row`);
-console.log(rowElement);
+// console.log(rowElement);
 
 
 // creazione di un Array di oggeti 
@@ -59,10 +59,10 @@ const members = [
 
 for (let i = 0; i < members.length; i++) {
     const member = members[i];
-    console.log(member);
+    // console.log(member);
     for (const key in member) {
         const value = member[key];
-        console.log(value);
+        // console.log(value);
         // creo l'elemento da importare nella dom 
         const cardElement = `<div class="card">${value}</div>`;
         console.log(cardElement);
