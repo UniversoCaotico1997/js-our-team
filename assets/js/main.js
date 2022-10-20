@@ -11,7 +11,7 @@
 //Stampare le stesse informazioni su DOM sottoforma di stringhe
     // mi seleziono l'elemento della dom 
         // Attravero il querySelctor
-const colElement = document.querySelector(`.col`);
+const rowElement = document.querySelector(`.row`);
 // console.log(rowElement);
 
 
@@ -65,9 +65,15 @@ for (let i = 0; i < members.length; i++) {
     // console.log(member.foto);
 
     // creo l'elemento da importare nella dom 
-    const cardElement = `<div class"col">${member.nome + member.ruolo}</div>`;
-    // console.log(cardElement);
-     // trasferisco l'elemento creato con insert
-    colElement.insertAdjacentHTML(`beforeend`,cardElement);
+    const markupElement =  `<div class"col"">
+                              <div class"card col">
+                                <h3>${member.nome}</h3>  
+                                <p>${member.ruolo}</p>
+                              </div>
+                            </div>`;
+     
+    console.log(markupElement);
+    // trasferisco l'elemento creato con insert
+    rowElement.insertAdjacentHTML(`beforeend`,markupElement);
 }
 
