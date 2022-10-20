@@ -8,42 +8,68 @@
 // E ricordiamoci che console.log() è nostro amico!
 
 
+//Stampare le stesse informazioni su DOM sottoforma di stringhe
+    // mi seleziono l'elemento della dom 
+        // Attravero il querySelctor
+const rowElement = document.querySelector(`.row`);
+console.log(rowElement);
+
 
 // creazione di un Array di oggeti 
-    // creare un array 
-        //inserire al suo interno degli oggetti
+// creare un array 
+//inserire al suo interno degli oggetti
 
 const members = [
     {
-       nome:`Wayne Barnett`,
-       ruolo:`Founder & CEO`,
-       foto:`wayne-barnett-founder-ceo.jpg`
+        nome:`Wayne Barnett`,
+        ruolo:`Founder & CEO`,
+        foto:`wayne-barnett-founder-ceo.jpg`
     },
     {
-        nome:`Wayne Barnett`,
-        ruolo:`Founder & CEO`,
+        nome:`Angela Carol`,
+        ruolo:`Chief Editor`,
+        foto:`angela-caroll-chief-editor.jpg`
+    },
+    {
+        nome:`Waleter gordon`,
+        ruolo:`Chief Editor`,
+        foto:`walter-gordon-office-manager.jpg`
+    },
+    {
+        nome:`Angela Lopez`,
+        ruolo:`Social Media Manager`,
+        foto:`angela-lopez-social-media-manager.jpg`
+    },
+    {
+        nome:`Scott Estrada`,
+        ruolo:`Developer`,
         foto:`wayne-barnett-founder-ceo.jpg`
-     },
-     {
-        nome:`Wayne Barnett`,
-        ruolo:`Founder & CEO`,
-        foto:`wayne-barnett-founder-ceo.jpg`
-     },
-     {
-        nome:`Wayne Barnett`,
-        ruolo:`Founder & CEO`,
-        foto:`wayne-barnett-founder-ceo.jpg`
-     },
-     {
-        nome:`Wayne Barnett`,
-        ruolo:`Founder & CEO`,
-        foto:`wayne-barnett-founder-ceo.jpg`
-     },
-     {
-        nome:`Wayne Barnett`,
-        ruolo:`Founder & CEO`,
-        foto:`wayne-barnett-founder-ceo.jpg`
-     },
-
+    },
+    {
+        nome:`Barbara Ramos`,
+        ruolo:`Grafic designer`,
+        foto:`barbara-ramos-graphic-designer.jpg`
+    },
+    
 ]
-console.log(members);
+// console.log(members);
+
+// stampiano a schermo la nostra arry contenente gli oggetti
+// ciclo for 
+
+for (let i = 0; i < members.length; i++) {
+    const member = members[i];
+    console.log(member);
+    for (const key in member) {
+        const value = member[key];
+        console.log(value);
+        // creo l'elemento da importare nella dom 
+        const cardElement = `<div class="card">${value}</div>`;
+        console.log(cardElement);
+        // trasferisco l'elemento creato con insert
+        rowElement.insertAdjacentHTML(`beforeend`,cardElement);
+        
+    }
+
+}
+
