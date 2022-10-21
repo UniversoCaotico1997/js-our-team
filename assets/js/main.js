@@ -65,14 +65,18 @@ for (let i = 0; i < members.length; i++) {
     // console.log(member.foto);
 
     // creo l'elemento da importare nella dom 
-    const markupElement =  `<div class"col"">
-                              <div class"card col">
-                                <h3>${member.nome}</h3>  
-                                <p>${member.ruolo}</p>
-                              </div>
-                            </div>`;
+    const markupElement =  
+    ` <div class="col">
+        <div class="card">
+             <img src="./assets/img/${member.foto}" alt="" class="card-img-top">
+             <div class="card-body">
+             <h3>${member.nome}</h3>
+             <p>${member.ruolo}</p>
+             </div>
+        </div>
+      </div>`;
      
-    console.log(markupElement);
+    // console.log(markupElement);
     // trasferisco l'elemento creato con insert
     rowElement.insertAdjacentHTML(`beforeend`,markupElement);
 }
